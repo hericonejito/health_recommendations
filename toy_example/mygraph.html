@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#00ff1e", "id": "Patient1", "label": "Patient1", "shape": "dot"}, {"color": "#00ff1e", "id": "Patient2", "label": "Patient2", "shape": "dot"}, {"color": "#00ff1e", "id": "Patient3", "label": "Patient3", "shape": "dot"}, {"color": "#162347", "id": "Drug1", "label": "Drug1", "shape": "dot"}, {"color": "#162347", "id": "Drug2", "label": "Drug2", "shape": "dot"}, {"color": "#162347", "id": "Drug3", "label": "Drug3", "shape": "dot"}, {"color": "#162347", "id": "Drug4", "label": "Drug4", "shape": "dot"}, {"color": "#162347", "id": "Drug5", "label": "Drug5", "shape": "dot"}, {"color": "#162347", "id": "Drug6", "label": "Drug6", "shape": "dot"}, {"color": "#162347", "id": "Drug7", "label": "Drug7", "shape": "dot"}, {"color": "#dd4b39", "id": "T1", "label": "T1", "shape": "dot"}, {"color": "#dd4b39", "id": "T2", "label": "T2", "shape": "dot"}, {"color": "#dd4b39", "id": "T3", "label": "T3", "shape": "dot"}, {"color": "#dd4b39", "id": "T4", "label": "T4", "shape": "dot"}, {"color": "#dd4b39", "id": "T5", "label": "T5", "shape": "dot"}, {"color": "#dd4b39", "id": "T6", "label": "T6", "shape": "dot"}]);
+        edges = new vis.DataSet([{"from": "Patient1", "to": "T1"}, {"from": "Patient1", "to": "T4"}, {"from": "Patient2", "to": "T2"}, {"from": "Patient2", "to": "T5"}, {"from": "Patient3", "to": "T3"}, {"from": "Patient3", "to": "T6"}, {"from": "T1", "to": "Drug1"}, {"from": "T1", "to": "Drug2"}, {"from": "T1", "to": "Drug3"}, {"from": "T1", "to": "Drug4"}, {"from": "T2", "to": "Drug1"}, {"from": "T2", "to": "Drug2"}, {"from": "T2", "to": "Drug3"}, {"from": "T2", "to": "Drug4"}, {"from": "T2", "to": "Drug5"}, {"from": "T2", "to": "Drug7"}, {"from": "T3", "to": "Drug1"}, {"from": "T3", "to": "Drug2"}, {"from": "T3", "to": "Drug5"}, {"from": "T3", "to": "Drug6"}, {"from": "T4", "to": "Drug1"}, {"from": "T4", "to": "Drug2"}, {"from": "T4", "to": "Drug3"}, {"from": "T5", "to": "Drug1"}, {"from": "T5", "to": "Drug2"}, {"from": "T5", "to": "Drug3"}, {"from": "T5", "to": "Drug4"}, {"from": "T5", "to": "Drug5"}, {"from": "T6", "to": "Drug1"}, {"from": "T6", "to": "Drug2"}, {"from": "T6", "to": "Drug5"}, {"from": "T6", "to": "Drug3"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

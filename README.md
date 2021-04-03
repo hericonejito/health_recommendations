@@ -1,6 +1,13 @@
 # health_recommendations
 Various notebooks for recommendations with health datasets
 ## Installation
+
+First of all, we need to clone the repository locally 
+
+`git clone https://github.com/hericonejito/health_recommendations`
+
+Next, before we run the notebook, we have to install the following libraries to our kernel
+
 `pip install plotly`
 
 `pip install networkx`

@@ -1,4 +1,4 @@
-# Recommending What Drug to Prescribe Next forAccurate and Explainable Medical Decisions
+# Recommending What Drug to Prescribe Next for Accurate and Explainable Medical Decisions
 
 
 ## Installation

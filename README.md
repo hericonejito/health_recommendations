@@ -20,3 +20,13 @@ Next, before we run the notebook, we have to install the following libraries to 
 `pip install numpy`
 
 `pip install matplotlib`
+
+#Accepted in IEEE Computer Based Medical Systems (CBMS) 2021
+
+#AUTHORS
+
+Panagiotis Symeonidis
+
+Stergios Chairistanidis
+
+Markus Zancker

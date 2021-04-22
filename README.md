@@ -1,5 +1,5 @@
-# health_recommendations
-Recommending What Drug to Prescribe Next forAccurate and Explainable Medical Decisions
+# Recommending What Drug to Prescribe Next forAccurate and Explainable Medical Decisions
+
 
 ## Installation
 

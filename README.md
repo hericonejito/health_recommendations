@@ -1,5 +1,15 @@
 # Recommending What Drug to Prescribe Next for Accurate and Explainable Medical Decisions
 
+## Accepted in IEEE Computer Based Medical Systems (CBMS) 2021
+
+## AUTHORS
+
+Panagiotis Symeonidis
+
+Stergios Chairistanidis
+
+Markus Zancker
+
 
 ## Installation
 
@@ -21,12 +31,3 @@ Next, before we run the notebook, we have to install the following libraries to 
 
 `pip install matplotlib`
 
-#Accepted in IEEE Computer Based Medical Systems (CBMS) 2021
-
-#AUTHORS
-
-Panagiotis Symeonidis
-
-Stergios Chairistanidis
-
-Markus Zancker

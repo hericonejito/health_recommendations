@@ -1,5 +1,6 @@
 # health_recommendations
-Various notebooks for recommendations with health datasets
+Recommending What Drug to Prescribe Next forAccurate and Explainable Medical Decisions
+
 ## Installation
 
 First of all, we need to clone the repository locally 

@@ -207,25 +207,25 @@ class GraphManipulation:
 
 
     @staticmethod
-    def filter_sessions(test_G, n_items = 1,custom_session='T',custom_article = 'D', custom_user = 'P'):
+    def filter_sessions(test_G, n_items = 1):
 
         # Remove sessions that have only one article
         short_sessions = [n for n, attr in test_G.nodes(data=True)
-                          if attr['entity'] == custom_session and test_G.degree(n) <= (n_items + 1)] # (one edge goes to user)
+                          if attr['entity'] == 'S' and test_G.degree(n) <= (n_items + 1)] # (one edge goes to user)
         test_G.remove_nodes_from(short_sessions)
 
         # Remove users that don't have sessions anymore
         # After filtering out the sessions with less than min items, we remove also the users
         # who have left without any corresponding session
         single_users = [n for n, attr in test_G.nodes(data=True)
-                        if attr['entity'] == custom_user and nx.degree(test_G, n) == 0]
+                        if attr['entity'] == 'U' and nx.degree(test_G, n) == 0]
         test_G.remove_nodes_from(single_users)
 
         # Remove articles that don't appear in any session anymore
         # Same as the users for articles
         single_articles = [n for n, attr in test_G.nodes(data=True)
-                           if attr['entity'] == custom_article
-                           and all([test_G[n][m]['edge_type'] != f'{custom_session}{custom_article}' for m in test_G[n]])]
+                           if attr['entity'] == 'A'
+                           and all([test_G[n][m]['edge_type'] != 'SA' for m in test_G[n]])]
         test_G.remove_nodes_from(single_articles)
 
         return test_G

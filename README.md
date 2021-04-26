@@ -31,3 +31,4 @@ Next, before we run the notebook, we have to install the following libraries to 
 
 `pip install matplotlib`
 
+![alt text](https://github.com/hericonejito/health_recommendations/blob/main/metapath_expl.png)
